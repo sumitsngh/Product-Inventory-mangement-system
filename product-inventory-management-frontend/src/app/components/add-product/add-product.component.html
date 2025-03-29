@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Add Product</h2>
+    <form #productForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="product.name" #name="ngModel" required>
+            <div *ngIf="name.invalid && name.touched" class="validation-message">Product name is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" [(ngModel)]="product.description" #description="ngModel" required>
+            <div *ngIf="description.invalid && description.touched" class="validation-message">Description is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="manufacturer">Manufacturer:</label>
+            <input type="text" id="manufacturer" name="manufacturer" [(ngModel)]="product.manufacturer" #manufacturer="ngModel" required>
+            <div *ngIf="manufacturer.invalid && manufacturer.touched" class="validation-message">Manufacturer is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" [(ngModel)]="product.price" #price="ngModel" required>
+            <div *ngIf="price.invalid && price.touched" class="validation-message">Price is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" [(ngModel)]="product.quantity" #quantity="ngModel" required>
+            <div *ngIf="quantity.invalid && quantity.touched" class="validation-message">Quantity is required</div>
+        </div>
+
+        <button type="button" (click)="addProduct()" [disabled]="productForm.invalid">Add Product</button>
+    </form>
+</div>

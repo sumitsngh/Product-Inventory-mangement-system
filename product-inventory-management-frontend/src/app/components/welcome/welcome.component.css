@@ -1,0 +1,60 @@
+.container {
+    padding: 20px;
+  }
+  
+  .search-add {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 30%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .product-table th,
+  .product-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .product-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .actions button {
+    margin: 8px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .actions button:hover {
+    background-color: rgb(150, 223, 236);
+  }
+  
+  .addProduct {
+    padding: 8px 15px;
+    margin-left: 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .addProduct:hover {
+    background-color: #218838;
+  }
+  

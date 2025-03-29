@@ -1,0 +1,58 @@
+
+# 📌 API Endpoints - User Service
+
+## 🔹 Public Endpoints (No Authentication Required)
+POST /api/auth/register - Register a new user
+POST /api/auth/login - Authenticate user & get JWT token
+
+Example (Register User):
+curl -X POST http://localhost:8081/api/auth/register \
+-H "Content-Type: application/json" \
+-d '{"name": "John Doe", "email": "john@example.com", "password": "password123"}'
+
+Example (Login User):
+curl -X POST http://localhost:8081/api/auth/login \
+-H "Content-Type: application/json" \
+-d '{"email": "john@example.com", "password": "password123"}'
+
+---
+
+## 🔹 User Management Endpoints (Require Authentication)
+GET /api/users/profile - Fetch current user profile
+PUT /api/users/update - Update user info
+DELETE /api/users/delete - Delete user account
+
+Example (Fetch Profile):
+curl -X GET http://localhost:8081/api/users/profile \
+-H "Authorization: Bearer JWT-TOKEN-HERE"
+
+---
+
+## 🔹 Admin Endpoints (Require Admin Role)
+GET /api/admin/users - List all users
+DELETE /api/admin/user/{id} - Delete a user
+
+Example (Get All Users):
+curl -X GET http://localhost:8081/api/admin/users \
+-H "Authorization: Bearer ADMIN-JWT-TOKEN"
+
+Example (Delete User):
+curl -X DELETE http://localhost:8081/api/admin/user/2 \
+-H "Authorization: Bearer ADMIN-JWT-TOKEN"
+
+---
+
+## 🔹 H2 Database Access
+URL: http://localhost:8081/h2-console
+JDBC URL: jdbc:h2:mem:inventorydb
+Username: sa
+Password: pass123
+
+---
+
+## 🔹 Error Handling
+400 - Bad Request (Invalid data)
+401 - Unauthorized (Invalid JWT Token)
+403 - Forbidden (Access Denied)
+404 - Resource Not Found
+500 - Internal Server Error

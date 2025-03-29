@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Product List</h2>
+
+  <div class="search-add">
+    <input
+      type="text"
+      placeholder="Search products..."
+      [(ngModel)]="searchTerm"
+    />
+    <button class="addProduct" (click)="addProduct()">Add Product</button>
+  </div>
+
+  <ul class="product-list">
+    <li *ngFor="let product of products | filter: searchTerm">
+      <span>{{ product.name }}</span>
+      <div class="actions">
+        <button (click)="viewProduct(product.id)">View</button>
+        <button (click)="editProduct(product.id)">Edit</button>
+        <button (click)="deleteProduct(product.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
